@@ -1,22 +1,31 @@
 using unixel.v2;
+using UnityEngine;
 
 namespace JuhaKurisu
 {
-    public class Sample : UnityEngine.MonoBehaviour, GameBase
+    public class Sample : MonoBehaviour, GameBase
     {
-        public void Awake()
+        public Vector2 pos;
+        public float speed;
+        public Texture2D texture;
+
+        private void Awake()
         {
+            Unixel.Init(256, 256);
             Unixel.AddGameBase(this);
         }
 
-        public void Init()
+        public void Setup()
         {
-            UnityEngine.Debug.Log("Init!!!!!!");
+            
         }
 
         public void Draw()
         {
-            UnityEngine.Debug.Log("Draw!!!!!!");
+            Utils.Clear();
+
+            pos += Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * speed;
+            Utils.Sprite(Vector2Int.FloorToInt(pos), texture);
         }
     }
 }
