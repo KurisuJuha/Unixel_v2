@@ -23,7 +23,7 @@ namespace unixel.v2
                 for (int x = 0; x < texture.width; x++)
                 {
                     Vector2Int position = new Vector2Int(x + pos.x, y + pos.y);
-                    if (InTexture(position)) pixels[position.y * Unixel.size.x + position.x] += p[i];
+                    if (InTexture(position)) pixels[position.y * Unixel.size.x + position.x] += p[i] * p[i].a;
                     i++;
                 }
             }

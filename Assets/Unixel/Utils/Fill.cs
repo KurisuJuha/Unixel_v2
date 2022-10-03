@@ -22,7 +22,7 @@ namespace unixel.v2
                 for (int x = 0; x < size.x; x++)
                 {
                     Vector2Int p = new Vector2Int(x, y) + pos;
-                    if (InTexture(p)) pixels[p.y * Unixel.size.x + p.x] += color;
+                    if (InTexture(p)) pixels[p.y * Unixel.size.x + p.x] += color * color.a;
                 }
             }
 
