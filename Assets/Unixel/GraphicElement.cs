@@ -10,5 +10,10 @@ namespace unixel.v2
         {
             return Pos.x >= 0 && Pos.y >= 0 && Pos.x < Unixel.size.x && Pos.y < Unixel.size.y;
         }
+
+        protected Color AlphaBlend(Color backColor, Color overColor)
+        {
+            return backColor + (overColor - backColor) * overColor.a;
+        }
     }
 }

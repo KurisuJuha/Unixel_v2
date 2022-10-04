@@ -15,7 +15,7 @@ namespace unixel.v2
 
         public override Color[] Draw(Color[] pixels)
         {
-            if (InTexture(pos)) pixels[pos.y * Unixel.size.x + pos.x] = color;
+            if (InTexture(pos)) pixels[pos.y * Unixel.size.x + pos.x] = AlphaBlend(pixels[pos.y * Unixel.size.x + pos.x], color);
             return pixels;
         }
     }

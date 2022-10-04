@@ -222,4 +222,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {x: 0, y: 0}
   speed: 3
-  texture: {fileID: 2800000, guid: 81ff1ad983fbbd5499b7f33fe2560bba, type: 3}
+  texture: {fileID: 2800000, guid: eb9eebbdec9777e4c8c257f22b9cb726, type: 3}

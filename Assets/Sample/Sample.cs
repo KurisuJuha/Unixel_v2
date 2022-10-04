@@ -22,7 +22,7 @@ namespace JuhaKurisu
 
         public void Draw()
         {
-            Utils.Clear();
+            Utils.Clear(Color.white);
 
             pos += Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * speed;
             Utils.Sprite(Vector2Int.FloorToInt(pos), texture);
