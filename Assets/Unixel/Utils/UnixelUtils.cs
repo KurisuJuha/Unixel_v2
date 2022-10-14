@@ -18,7 +18,7 @@ namespace unixel.v2
         /// </summary>
         public static void Clear(Color color) => Unixel.AddGraphicElements(new Clear(color));
         /// <summary>
-        /// 指定した色で塗りつぶします。
+        /// 黒色で塗りつぶします。
         /// </summary>
         public static void Clear() => Clear(Color.black);
 

@@ -8,6 +8,7 @@ namespace JuhaKurisu
         public Vector2 pos;
         public float speed;
         public Texture2D texture;
+        private bool start;
 
         private void Awake()
         {
@@ -17,12 +18,15 @@ namespace JuhaKurisu
 
         public void Setup()
         {
-            
+
         }
 
         public void Draw()
         {
-            Utils.Clear(Color.white);
+            for (int i = 0; i < 6000; i++)
+            {
+                Utils.Point(new Vector2Int(Random.Range(0, 256), Random.Range(0, 256)), Color.black);
+            }
 
             pos += Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * speed;
             Utils.Sprite(Vector2Int.FloorToInt(pos), texture);

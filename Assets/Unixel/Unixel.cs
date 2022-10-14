@@ -81,10 +81,10 @@ namespace unixel.v2
 
         private IEnumerator MainLoopCoroutine()
         {
+            Utils.Clear();
+
             while (true)
             {
-                graphicElements.Clear();
-
                 foreach (var gameBase in gameBases)
                 {
                     gameBase.Draw();
@@ -102,6 +102,8 @@ namespace unixel.v2
                 texture.Apply();
 
                 yield return new WaitForSecondsRealtime(1 / 60f);
+                
+                graphicElements.Clear();
             }
         }
 
