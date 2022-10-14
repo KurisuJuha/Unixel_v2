@@ -22,10 +22,10 @@ namespace JuhaKurisu
 
         public void Draw()
         {
-            for (int i = 0; i < 6000; i++)
-            {
-                Utils.Point(new Vector2Int(Random.Range(0, 256), Random.Range(0, 256)), Color.black);
-            }
+            Utils.Clear();
+
+            Utils.Fill(new Vector2Int(10, 10), new Vector2Int(30, 30), Color.blue);
+            Utils.Point(new Vector2Int(200, 200), Color.green);
 
             pos += Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * speed;
             Utils.Sprite(Vector2Int.FloorToInt(pos), texture);
