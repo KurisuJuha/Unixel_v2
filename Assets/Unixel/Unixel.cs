@@ -17,6 +17,7 @@ namespace unixel.v2
         private Mesh mesh;
         private Material material;
         private Texture2D texture;
+        private UnixelInput input;
 
         private void Awake()
         {
@@ -38,6 +39,7 @@ namespace unixel.v2
             material.mainTexture = Instance.texture;
             Instance.texture.SetPixel(10, 10, Color.black);
             Instance.texture.Apply();
+            input = new UnixelInput();
             StartCoroutine(MainLoopCoroutine());
         }
 
@@ -85,6 +87,8 @@ namespace unixel.v2
 
             while (true)
             {
+                input.Set();
+
                 foreach (var gameBase in gameBases)
                 {
                     gameBase.Draw();
