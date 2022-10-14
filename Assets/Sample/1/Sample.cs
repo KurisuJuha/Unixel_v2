@@ -8,7 +8,6 @@ namespace JuhaKurisu
         public Vector2 pos;
         public float speed;
         public Texture2D texture;
-        private bool start;
 
         private void Awake()
         {
