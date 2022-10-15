@@ -3,11 +3,12 @@ using UnityEngine;
 
 namespace JuhaKurisu
 {
-    public class Sample2 : MonoBehaviour , GameBase
+    public class Sample4 : MonoBehaviour, GameBase
     {
         [SerializeField] Texture2D tex;
         [SerializeField] Texture2D tex2;
         [SerializeField] Texture2D bigtex;
+        [SerializeField] bool inverse;
 
         private Vector2 pos;
         private Texture2D mainTex;
@@ -37,10 +38,15 @@ namespace JuhaKurisu
             if (UnixelInput.click) mainTex = tex;
             if (UnixelInput.leftclick) mainTex = tex2;
 
+            if (UnixelInput.a) inverse = true;
+            if (UnixelInput.b) inverse = false;
+
             pos += (Vector2)vec / 1.3f;
 
             Utils.Sprite(Vector2Int.FloorToInt(pos), mainTex);
-            Utils.Sprite(UnixelInput.cursorPosition - new Vector2Int(bigtex.width,bigtex.height) / 2, bigtex);
+            Utils.Sprite(UnixelInput.cursorPosition - new Vector2Int(bigtex.width, bigtex.height) / 2, bigtex);
+
+            if (inverse) Unixel.AddGraphicElements(new InverseFilter());
         }
     }
 }

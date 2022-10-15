@@ -112,7 +112,7 @@ namespace unixel.v2
         }
 
         /// <summary>
-        /// ‰Šú‰»‚µ‚Ü‚·B
+        /// åˆæœŸåŒ–ã—ã¾ã™ã€‚
         /// </summary>
         public static void Init(int width, int height)
         {
@@ -124,7 +124,7 @@ namespace unixel.v2
         }
 
         /// <summary>
-        /// GraphicElement‚ğ’Ç‰Á‚µ‚Ü‚·B
+        /// GraphicElementã‚’è¿½åŠ ã—ã¾ã™ã€‚
         /// </summary>
         public static void AddGraphicElements(GraphicElement element)
         {
@@ -132,13 +132,13 @@ namespace unixel.v2
         }
 
         /// <summary>
-        /// GameBase‚ğ’Ç‰Á‚µ‚Ü‚·B
+        /// GameBaseã‚’è¿½åŠ ã—ã¾ã™ã€‚
         /// </summary>
         public static void AddGameBase(GameBase gameBase)
         {
             if (!Instance.started)
             {
-                Debug.LogError("Init‚µ‚Ä‚¢‚Ü‚¹‚ñB");
+                Debug.LogError("Initã—ã¦ã„ã¾ã›ã‚“ã€‚");
                 return;
             }
 

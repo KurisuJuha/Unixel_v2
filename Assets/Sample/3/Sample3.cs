@@ -5,11 +5,11 @@ namespace JuhaKurisu
 {
     public class Sample3 : MonoBehaviour, GameBase
     {
-        public Texture2D tex;
-        public Texture2D tex2;
-        public Texture2D bigtex;
-        public Vector2 pos;
+        [SerializeField] Texture2D tex;
+        [SerializeField] Texture2D tex2;
+        [SerializeField] Texture2D bigtex;
 
+        private Vector2 pos;
         private Texture2D mainTex;
 
         private void Awake()

@@ -28,6 +28,14 @@ namespace unixel.v2
         public static bool leftclick_Down { get; private set; }
         public static bool leftclick_Up { get; private set; }
 
+        public static bool a { get; private set; }
+        public static bool a_Down { get; private set; }
+        public static bool a_Up { get; private set; }
+
+        public static bool b { get; private set; }
+        public static bool b_Down { get; private set; }
+        public static bool b_Up { get; private set; }
+
         public static Vector2Int cursorPosition { get; private set; }
 
         public void Set()
@@ -55,6 +63,14 @@ namespace unixel.v2
             leftclick = Input.GetMouseButton(0);
             leftclick_Down = Input.GetMouseButtonDown(0);
             leftclick_Up = Input.GetMouseButtonUp(0);
+
+            a = Input.GetKey(KeyCode.Z);
+            a_Down = Input.GetKeyDown(KeyCode.Z);
+            a_Up = Input.GetKeyUp(KeyCode.Z);
+
+            b = Input.GetKey(KeyCode.X);
+            b_Down = Input.GetKeyDown(KeyCode.X);
+            b_Up = Input.GetKeyUp(KeyCode.X);
 
             Vector2 pos = Input.mousePosition;
             pos = new Vector2(pos.x / Screen.width, pos.y / Screen.height);

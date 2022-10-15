@@ -5,9 +5,9 @@ namespace JuhaKurisu
 {
     public class Sample : MonoBehaviour, GameBase
     {
-        public Vector2 pos;
-        public float speed;
-        public Texture2D texture;
+        [SerializeField] Vector2 pos;
+        [SerializeField] float speed;
+        [SerializeField] Texture2D texture;
 
         private void Awake()
         {
