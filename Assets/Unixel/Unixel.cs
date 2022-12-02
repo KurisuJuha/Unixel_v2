@@ -8,7 +8,7 @@ namespace unixel.v2
     public class Unixel : MonoBehaviour
     {
         public static Vector2Int size;
-        
+
         private static Unixel Instance;
 
         private List<GraphicElement> graphicElements = new();
@@ -89,24 +89,21 @@ namespace unixel.v2
             {
                 input.Set();
 
-                foreach (var gameBase in gameBases)
-                {
-                    gameBase.Draw();
-                }
-
                 Color[] pixels = texture.GetPixels();
 
-                foreach (var graphicElement in graphicElements)
+                try
                 {
-                    pixels = graphicElement.Draw(pixels);
+                    foreach (var gameBase in gameBases) gameBase.Draw();
+                    foreach (var graphicElement in graphicElements) pixels = graphicElement.Draw(pixels);
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogError(e.Message);
                 }
 
                 texture.SetPixels(pixels);
-
                 texture.Apply();
-
                 yield return new WaitForSecondsRealtime(1 / 60f);
-                
                 graphicElements.Clear();
             }
         }

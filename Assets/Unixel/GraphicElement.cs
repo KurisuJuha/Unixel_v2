@@ -14,6 +14,7 @@ namespace unixel.v2
         protected Color AlphaBlend(Color backColor, Color overColor)
         {
             return backColor + (overColor - backColor) * overColor.a;
+
         }
     }
 }

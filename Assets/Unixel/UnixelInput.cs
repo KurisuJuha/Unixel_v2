@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace unixel.v2
@@ -73,7 +74,8 @@ namespace unixel.v2
             b_Up = Input.GetKeyUp(KeyCode.X);
 
             Vector2 pos = Input.mousePosition;
-            pos = new Vector2(pos.x / Screen.width, pos.y / Screen.height);
+            int m = Math.Min(Screen.width, Screen.height);
+            pos = new Vector2(pos.x / m, pos.y / m);
             pos = new Vector2(Unixel.size.x * pos.x, Unixel.size.y * pos.y);
             cursorPosition = Vector2Int.FloorToInt(pos);
         }
